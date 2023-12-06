@@ -59,7 +59,7 @@ class UserSettingsAPIView(APIView):
 
     def get_object(self):
         return self.request.user
-
+    
     def get(self, request, *args, **kwargs):
         user = self.get_object()
         serializer = InfoUserSerializer(user)

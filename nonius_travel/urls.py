@@ -11,6 +11,5 @@ urlpatterns = [
     # Include Djoser auth paths
     path('auth/', include('djoser.urls')),
     path('auth/', include('djoser.urls.authtoken')),
-    # Add your custom user settings path
     path('auth/settings/', UserSettingsAPIView.as_view(), name='user-settings'),
 ]
