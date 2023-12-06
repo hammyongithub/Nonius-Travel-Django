@@ -60,6 +60,11 @@ class UserSettingsAPIView(APIView):
     def get_object(self):
         return self.request.user
 
+    def get(self, request, *args, **kwargs):
+        user = self.get_object()
+        serializer = InfoUserSerializer(user)
+        return Response(serializer.data)
+
     def patch(self, request, *args, **kwargs):
         user = self.get_object()
         serializer = InfoUserSerializer(user, data=request.data, partial=True)  # partial=True allows partial update
